@@ -18,10 +18,10 @@ app.post("/authenticate", async (req, res) => {
     return res.status(r.status).json(r.data)
 
   } catch (e)  {
-
+    return res.status(r.response.status).json(r.response.data)
   }
 
-  return res.json({ username: username, secret: "sha256..." });
+//   return res.json({ username: username, secret: "sha256..." });
 });
 
 app.listen(3001);
